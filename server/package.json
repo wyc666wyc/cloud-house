@@ -1,0 +1,19 @@
+{
+  "name": "@dynamic-form/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/app.ts"
+  },
+  "dependencies": {
+    "@dynamic-form/parser": "workspace:^",
+    "@dynamic-form/renderer": "workspace:^",
+    "@dynamic-form/utils": "workspace:^",
+    "@fastify/cors": "^8.2.1",
+    "@fastify/mongodb": "^7.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

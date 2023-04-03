@@ -1,7 +1,3 @@
-type Props = {
-  name?: String
-}
-
 import { h, resolveComponent, defineComponent } from 'vue'
 import draggable from 'vuedraggable'
 import { FormComponent } from '@dynamic-form/generator/src/config'
@@ -33,23 +29,24 @@ export default defineComponent({
   )
 })
 const componentGroup = (props: {list: FormComponent[]}) => {
+  const group = {
+    name: 'form',
+    pull: 'clone'
+  }
   return (
-    <draggable
+    props.list.length ? <draggable
+      group={group}
+      sort={false}
       item-key='test'
       list={props.list}
       v-slots={dragSlot}
-    />
+    /> : '暂无数据'
   )
 }
 const dragSlot = {
-  item: ({ element: FormComponent}) => {
-    return h(resolveComponent(element.tag))
+  item: (item: { element: FormComponent}) => {
+    return (
+      <el-button>{item.element.__config__.name}</el-button>
+    )
   }
 }
-// const componentGroup = (list: FormComponent[]) => {
-//   return {
-//     item: list.map(({__config__}) => (
-//       <div>{__config__.name}</div>
-//     ))
-//   }
-// }

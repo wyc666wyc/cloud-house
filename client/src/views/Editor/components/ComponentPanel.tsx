@@ -42,9 +42,8 @@ const componentGroup = (props: {list: FormComponent[]}) => {
   )
 }
 const dragSlot = {
-  item: (aa) => {
-    console.log(aa)
-    // return h(resolveComponent(element.tag))
+  item: ({ element: FormComponent}) => {
+    return h(resolveComponent(element.tag))
   }
 }
 // const componentGroup = (list: FormComponent[]) => {

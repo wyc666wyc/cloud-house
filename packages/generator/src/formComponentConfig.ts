@@ -1,11 +1,11 @@
-import type { FormComponent } from './index'
+import type { FormComponent } from './config'
 
-export const inputFormComponent: FormComponent[] = [
+export const inputConfig: FormComponent[] = [
   {
     type: 'input',
     __config__: {
       name: '输入框',
-      tag: 'el-input',
+      tag: 'input',
       defaultValue: '',
       required: false,
       layout: 'col',
@@ -16,12 +16,26 @@ export const inputFormComponent: FormComponent[] = [
     }
   },
 ]
-export const selectFormComponent: FormComponent[] = [
+export const selectConfig: FormComponent[] = [
   {
-    type: 'input',
+    type: 'select',
     __config__: {
       name: '选择框',
-      tag: 'el-select',
+      tag: 'select',
+      defaultValue: '',
+      required: false,
+      layout: 'col',
+      span: 24,
+    },
+    __prop__: {
+
+    }
+  },
+  {
+    type: 'select',
+    __config__: {
+      name: '级联选择',
+      tag: 'cascader',
       defaultValue: '',
       required: false,
       layout: 'col',
@@ -32,16 +46,9 @@ export const selectFormComponent: FormComponent[] = [
     }
   },
 ]
-export const layoutFormComponent: FormComponent[] = [
+export const layoutConfig: FormComponent[] = [
 
 ]
-export const customFormComponent: FormComponent[] = [
+export const customConfig: FormComponent[] = [
 
 ]
-const formComponent = [
-  ...inputFormComponent,
-  ...selectFormComponent,
-  ...layoutFormComponent,
-  ...customFormComponent
-]
-export default formComponent

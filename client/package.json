@@ -12,7 +12,8 @@
     "@dynamic-form/generator": "workspace:^",
     "@dynamic-form/parser": "workspace:^",
     "@dynamic-form/renderer": "workspace:^",
-    "@dynamic-form/utils": "workspace:^"
+    "@dynamic-form/utils": "workspace:^",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "unplugin-auto-import": "^0.15.2",

@@ -1,20 +1,8 @@
- 
-export default {
-  components: {
-    button: {
-      tag: 'el-button'
-    },
-    input: {
-      tag: 'el-input'
-    },
-    select: {
-      tag: 'el-select'
-    },
-    option: {
-      tag: 'el-option'
-    }
-  },
-  formRules: {
-
+import type { TransferRule } from '../config'
+const rule: TransferRule = {
+  componentTransfer(tag: string) {
+    const reg = /^\b/
+    return tag.replace(reg, 'el-')
   }
 }
+export default rule

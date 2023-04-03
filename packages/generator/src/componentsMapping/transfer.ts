@@ -1,3 +1,17 @@
-export default function (config, ui) {
-
+import type { FormComponent, TransferRule } from '../config'
+export function transfer(config: FormComponent[], transferRules: TransferRule): FormComponent[]  {
+  return config.map(({
+    __config__,
+    ...rest
+  }) => {
+    const { tag, ...rest__config__ } = __config__
+    const newTag = transferRules.componentTransfer(tag)
+    return {
+      __config__: {
+        tag: newTag,
+        ...rest__config__,
+      },
+      ...rest
+    }
+  })
 }

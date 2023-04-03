@@ -1,11 +1,17 @@
 import { CSSProperties } from "vue"
+import { layouts, componentTypes, customTags } from './index'
+// import { TupleToUnion } from '@dynamic-form/utils/src/typings/utils'
 
-type FormLayout = 'col' | 'row'
-type FormComponentType = 'input' | 'select' | 'layout' | 'custom'
+export type TupleToUnion<T extends readonly any[]> = keyof {
+  [K in T[number]]
+}
+
+type FormLayout = TupleToUnion<typeof layouts>
+type FormComponentType = TupleToUnion<typeof componentTypes>
 type FormComponentConfig = {
   name: string,
   tag: string,
-  defaultValue: string | number | Array | null | undefined,
+  defaultValue: string | number | Array<unknown> | null | undefined,
   required: boolean,
   layout: FormLayout,
   span: number,
@@ -33,7 +39,7 @@ type FormComponent = {
   __slot__?: FormComponentSlot,
 }
 
-type UIMapping = {
-  components: FormComponent[],
-  formRules: {}
+type TransferRule = {
+  componentTransfer: (tag: string) => string
+  ruleTransfer?: (rule: string) => string
 }

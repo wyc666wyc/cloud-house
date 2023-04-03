@@ -3,7 +3,7 @@ type Props = {
 }
 
 import { h, resolveComponent } from 'vue'
-import FCConfig from '@dynamic-form/generator/src/formComponentConfig'
+import FCConfig from '@dynamic-form/generator/src/index'
 
 export default function (props: Props) {
   return (

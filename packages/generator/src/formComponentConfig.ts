@@ -50,5 +50,18 @@ export const layoutConfig: FormComponent[] = [
 
 ]
 export const customConfig: FormComponent[] = [
+  {
+    type: 'custom',
+    __config__: {
+      name: '示例',
+      tag: 'Example',
+      defaultValue: '',
+      required: false,
+      layout: 'col',
+      span: 24,
+    },
+    __prop__: {
 
+    }
+  },
 ]

@@ -1,5 +1,5 @@
 {
-  "name": "@dynamic-form/renderer",
+  "name": "@dynamic-form/render",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

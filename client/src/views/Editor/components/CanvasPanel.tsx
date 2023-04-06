@@ -1,5 +1,6 @@
 import { h, resolveComponent, ref } from 'vue'
 import type { FormComponent } from '@dynamic-form/generator/src/config'
+import useFormList from '@/hooks/useFormList'
 
 const group = {
   name: 'form',
@@ -7,7 +8,7 @@ const group = {
 }
 
 export default function() {
-  const list = ref<FormComponent[]>([])
+  const { list } = useFormList()
   const handleChange = () => {
     console.log(list.value)
   }

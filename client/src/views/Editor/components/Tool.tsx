@@ -4,11 +4,11 @@ import Parser from '@dynamic-form/parser/src/views/Parser/index'
 import useFormList from '@/hooks/useFormList'
 
 export default function() {
-  const { list } = useFormList()
+  const { list, clear } = useFormList()
   return (
     <div>
       <el-button onClick={handlePreview}>预览</el-button>
-      <el-button>清空</el-button>
+      <el-button onClick={clear}>清空</el-button>
       <el-dialog v-model={visible.value}>
         <Parser config={list.value}></Parser>
       </el-dialog>

@@ -13,24 +13,37 @@ export default function() {
     console.log(list.value)
   }
   return (
-    <draggable
-      group={group}
-      item-key="render"
-      list={list.value}
-      v-slots={dragSlot}
-      onChange={handleChange}
-    >
-    </draggable>
+    <el-form>
+      <draggable
+        class="h-full"
+        group={group}
+        item-key="render"
+        list={list.value}
+        v-slots={dragSlot}
+        onChange={handleChange}
+      >
+      </draggable>
+    </el-form>
   )
 }
 const dragSlot = {
   item: (item: { element: FormComponent}) => {
     const { __config__: config, __prop__: prop } = item.element
     return (
-      <div>
-        <div>{config.name}</div>
-        { h(resolveComponent(config.tag)) }
-      </div>
+      <wrapper>
+        <el-form-item label={config.name}>
+          { h(resolveComponent(config.tag)) }
+        </el-form-item>
+      </wrapper>
     )
   }
+}
+const wrapper = (props: any, ctx: { slots: any }) => {
+  console.log(props, ctx)
+  return (
+    <div>
+      haha
+      { ctx.slots }
+    </div>
+  )
 }

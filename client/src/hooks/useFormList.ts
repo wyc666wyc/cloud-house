@@ -1,11 +1,17 @@
 import { ref, Ref } from 'vue'
 import { FormComponent } from "@dynamic-form/generator/src/config"
-type Use = {
-  list: Ref<FormComponent[]>
-}
-export default function(): Use  {
-  const list = ref<FormComponent[]>([])
+
+const list = ref<FormComponent[]>([])
+export default function useFormList() {
+  const deleteItem = (index: number) => {
+    list.value.splice(index, 1)
+  }
+  const clear = () => {
+    list.value = []
+  }
   return {
-    list
+    list,
+    deleteItem,
+    clear
   }
 }

@@ -47,7 +47,34 @@ export const selectConfig: FormComponent[] = [
   },
 ]
 export const layoutConfig: FormComponent[] = [
+  {
+    type: 'layout',
+    __config__: {
+      name: '容器',
+      tag: 'container',
+      defaultValue: '',
+      required: false,
+      layout: 'col',
+      span: 24,
+    },
+    __prop__: {
 
+    }
+  },
+  {
+    type: 'layout',
+    __config__: {
+      name: '子表单',
+      tag: 'sub',
+      defaultValue: '',
+      required: false,
+      layout: 'col',
+      span: 24,
+    },
+    __prop__: {
+
+    }
+  },
 ]
 export const customConfig: FormComponent[] = [
   {

@@ -5,11 +5,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('@/views/Home/index.vue')
-  },
-  {
-    path: '/parser',
-    component: () => import('@/views/Parser/index.vue')
-  },
+  }
 ]
 
 const router = createRouter({

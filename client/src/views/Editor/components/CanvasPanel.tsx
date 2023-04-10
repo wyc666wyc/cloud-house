@@ -1,5 +1,6 @@
-import { h, resolveComponent, ref } from 'vue'
+import { h, resolveComponent, defineComponent, ref, SetupContext } from 'vue'
 import type { FormComponent } from '@dynamic-form/generator/src/config'
+import DraggableItem from "./DraggableItem"
 import useFormList from '@/hooks/useFormList'
 
 const group = {
@@ -7,43 +8,31 @@ const group = {
   pull: 'clone'
 }
 
-export default function() {
-  const { list } = useFormList()
-  const handleChange = () => {
-    console.log(list.value)
-  }
-  return (
-    <el-form>
-      <draggable
-        class="h-full"
-        group={group}
-        item-key="render"
-        list={list.value}
-        v-slots={dragSlot}
-        onChange={handleChange}
-      >
-      </draggable>
-    </el-form>
-  )
-}
-const dragSlot = {
-  item: (item: { element: FormComponent}) => {
-    const { __config__: config, __prop__: prop } = item.element
-    return (
-      <wrapper>
-        <el-form-item label={config.name}>
-          { h(resolveComponent(config.tag)) }
-        </el-form-item>
-      </wrapper>
+export default defineComponent({
+  components: {
+    DraggableItem
+  },
+  setup() {
+    const { list } = useFormList
+    const handleChange = () => {
+      console.log(list.value)
+    }
+    return () => (
+      <el-form>
+        <draggable
+          class="h-full"
+          list={list.value}
+          group={group}
+          item-key="render"
+          animation={200}
+          ghost-class="ghostClass"
+          chosen-class="chosenClass"
+          drag-class="dragClass"
+          v-slots={{ item: DraggableItem }}
+          onChange={handleChange}
+        >
+        </draggable>
+      </el-form>
     )
   }
-}
-const wrapper = (props: any, ctx: { slots: any }) => {
-  console.log(props, ctx)
-  return (
-    <div>
-      haha
-      { ctx.slots }
-    </div>
-  )
-}
+})

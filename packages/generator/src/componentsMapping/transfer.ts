@@ -6,7 +6,7 @@ export function transfer(config: FormComponent[], transferRules: TransferRule): 
     ...rest
   }) => {
     const { tag, ...rest__config__ } = __config__
-    const newTag = type === 'custom' ? tag : transferRules.componentTransfer(tag)
+    const newTag = transferRules.componentTransfer(tag)
     return {
       type,
       __config__: {

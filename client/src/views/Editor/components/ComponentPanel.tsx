@@ -6,6 +6,7 @@ import {
   layoutFormComponent,
   customFormComponent
 } from "@dynamic-form/generator/src/index"
+import useFormList from "@/hooks/useFormList"
 
 export default function () {
   return (
@@ -32,14 +33,18 @@ const componentGroup = (props: { list: FormComponent[] }) => {
       sort={false}
       item-key="test"
       list={props.list}
-      v-slots={dragSlot}
+      v-slots={{ item: dragItemSlot }}
     />
   ) : (
     "暂无数据"
   )
 }
-const dragSlot = {
-  item: (item: { element: FormComponent }) => {
-    return <el-button>{item.element.__config__.name}</el-button>
-  }
+const dragItemSlot = (item: { element: FormComponent }) => {
+  const { __config__: config, __prop__: prop } = item.element
+  return (
+    <el-button onClick={handleClick(item.element)}>{config.name}</el-button>
+  )
+}
+const handleClick = (item: FormComponent) => () => {
+  useFormList.addItem(item)
 }

@@ -7,8 +7,8 @@ export const componentTypes = ['input', 'select', 'layout', 'custom'] as const
 
 export const inputFormComponent = transfer(inputConfig, elementPlus)
 export const selectFormComponent = transfer(selectConfig, elementPlus)
-export const layoutFormComponent = transfer(layoutConfig, elementPlus)
-export const customFormComponent = transfer(customConfig, elementPlus)
+export const layoutFormComponent = layoutConfig
+export const customFormComponent = customConfig
 
 const formComponent = [
   ...inputFormComponent,

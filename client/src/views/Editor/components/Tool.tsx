@@ -4,7 +4,7 @@ import Parser from '@dynamic-form/parser/src/views/Parser/index'
 import useFormList from '@/hooks/useFormList'
 
 export default function() {
-  const { list, clear } = useFormList()
+  const { list, clear } = useFormList
   return (
     <div>
       <el-button onClick={handlePreview}>预览</el-button>

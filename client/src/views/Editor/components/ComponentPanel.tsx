@@ -1,4 +1,5 @@
 // import { h, resolveComponent, defineComponent } from 'vue'
+import { cloneDeep } from 'lodash-es'
 import { FormComponent } from "@dynamic-form/generator/src/config"
 import {
   inputFormComponent,
@@ -46,5 +47,5 @@ const dragItemSlot = (item: { element: FormComponent }) => {
   )
 }
 const handleClick = (item: FormComponent) => () => {
-  useFormList.addItem(item)
+  useFormList.addItem(cloneDeep(item))
 }

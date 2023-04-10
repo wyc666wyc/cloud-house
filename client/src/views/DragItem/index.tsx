@@ -17,15 +17,18 @@ export default function (props: Props) {
   const layout = layouts[config.layout]
   return (
     <div>
-      <div>
-        <el-button onClick={handleDelete(index)}>删除</el-button>
-        <el-button onClick={handleCopy(element)}>复制</el-button>
-      </div>
       { layout(element, index) }
     </div>
   )
 }
-
+const itemBtn = (element: FormComponent, index: number) => {
+  return (
+    <div>
+    <el-button onClick={handleDelete(index)}>删除</el-button>
+    <el-button onClick={handleCopy(element)}>复制</el-button>
+  </div>
+  )
+}
 const layouts = {
   col(element: FormComponent, index: number) {
     return (
@@ -33,6 +36,7 @@ const layouts = {
         <el-form-item label={element.__config__.name}>
           <dynamic-render attr={element}></dynamic-render>
         </el-form-item>
+        { itemBtn(element, index) }
       </el-col>
     )
   },
@@ -53,12 +57,16 @@ const layouts = {
           >
           </draggable>
         </el-col>
+        { itemBtn(element, index) }
       </el-row>
     )
   },
 }
-const renderChildren = (children: FormComponent[]) => {
-  
+const renderChildren = (item: { element: FormComponent, index: number }) => {
+  const { __config__: config, __prop__: prop } = item.element
+  const children = item.element.__config__.children
+  const layout = layouts[config.layout]
+  return layout(item.element, item.index)
 }
 const handleDelete = (index: number) => () => {
   useFormList.deleteItem(index)

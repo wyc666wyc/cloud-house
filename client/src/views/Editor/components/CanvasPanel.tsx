@@ -1,6 +1,6 @@
 import { h, resolveComponent, defineComponent, ref, SetupContext } from 'vue'
 import type { FormComponent } from '@dynamic-form/generator/src/config'
-import DraggableItem from "../../Drag"
+import DraggableItem from "../../DragItem"
 import useFormList from '@/hooks/useFormList'
 
 const group = {

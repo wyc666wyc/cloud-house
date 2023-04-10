@@ -54,8 +54,9 @@ export const layoutConfig: FormComponent[] = [
       tag: 'container',
       defaultValue: '',
       required: false,
-      layout: 'col',
+      layout: 'row',
       span: 24,
+      children: []
     },
     __prop__: {
 
@@ -68,8 +69,9 @@ export const layoutConfig: FormComponent[] = [
       tag: 'sub',
       defaultValue: '',
       required: false,
-      layout: 'col',
+      layout: 'row',
       span: 24,
+      children: []
     },
     __prop__: {
 

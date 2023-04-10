@@ -20,6 +20,7 @@ type FormComponentConfig = {
   showLabel?: boolean,
   isHidden?: boolean,
   icon?: string,
+  children?: FormComponent[],
 }
 type FormComponentProp = {
   style?: CSSProperties

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "@fastify/cors": "^8.2.1",
     "@fastify/mongodb": "^7.0.0",
     "@unocss/preset-uno": "^0.50.6",

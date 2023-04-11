@@ -1,8 +1,28 @@
 .chosenClass {
   background-color: aquamarine;
 }
-.drag-row {
-  min-height: 80px;
-  border: 1px dashed #06628d;
-  padding: 10px;
+.drag {
+  &-item {
+    position: relative;
+    cursor: move;
+    &:hover, &-active {
+      .el-form-item {
+        background-color: #f5f7fa;
+      }
+    }
+    .el-form-item {
+      padding: 12px 10px;
+      border-radius: 4px;
+    }
+  }
+  &-itemBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &-row {
+    min-height: 80px;
+    border: 1px dashed #06628d;
+    padding: 10px;
+  }
 }

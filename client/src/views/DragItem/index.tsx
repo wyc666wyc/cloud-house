@@ -1,6 +1,10 @@
 import { h, defineComponent, resolveComponent } from "vue"
 import useFormList from "@/hooks/useFormList"
 import type { FormComponent } from "@dynamic-form/generator/src/config"
+import {
+  DocumentCopy,
+  Delete,
+} from '@element-plus/icons-vue'
 import './index.scss'
 
 type Props = {
@@ -22,17 +26,19 @@ export default function (props: Props) {
 }
 const itemBtn = (element: FormComponent, index: number) => {
   return (
-    <div>
-      <el-button onClick={handleDelete(index)}>删除</el-button>
-      <el-button onClick={handleCopy(element)}>复制</el-button>
+    <div class="drag-itemBtn">
+      <el-button onClick={handleDelete(index)} type="danger" icon={Delete} circle />
+      <el-button onClick={handleCopy(element)} type="primary" icon={DocumentCopy} circle />
     </div>
   )
 }
 const layouts = {
   col(element: FormComponent, index: number) {
+    const { __config__: config, __prop__: prop } = element
+    const className = { 'drag-item': true, 'drag-item-active': useFormList.activeItem.value === element }
     return (
-      <el-col onClick={handleClick(element)}>
-        <el-form-item label={element.__config__.name}>
+      <el-col class={className} span={config.span} onClick={handleClick(element)}>
+        <el-form-item label={config.name}>
           <dynamic-render attr={element}></dynamic-render>
         </el-form-item>
         { itemBtn(element, index) }
@@ -40,11 +46,12 @@ const layouts = {
     )
   },
   row(element: FormComponent, index: number) {
+    const { __config__: config, __prop__: prop } = element
+    const className = { 'drag-item': true, 'drag-row': true, 'drag-item-active': useFormList.activeItem.value === element }
     return (
       <el-row>
-        <el-col onClick={handleClick(element)}>
+        <el-col class={className} span={config.span} onClick={handleClick(element)}>
           <draggable
-            class="drag-row"
             list={element.__config__.children}
             group={group}
             item-key="render"

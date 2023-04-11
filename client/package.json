@@ -9,6 +9,7 @@
   "dependencies": {
     "vite": "^4.2.1",
     "element-plus": "^2.3.1",
+    "@element-plus/icons-vue": "^2.1.0",
     "@dynamic-form/generator": "workspace:^",
     "@dynamic-form/parser": "workspace:^",
     "@dynamic-form/render": "workspace:^",

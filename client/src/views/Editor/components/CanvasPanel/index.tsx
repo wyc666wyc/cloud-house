@@ -3,18 +3,25 @@ import type { FormComponent } from "@dynamic-form/generator/src/config"
 import DraggableItem from "../../../DragItem"
 import useFormList from "@/hooks/useFormList"
 
+type DragChange = {
+  added?: {
+    element: FormComponent
+  }
+}
 const group = {
   name: "form"
 }
 const { list } = useFormList
-const handleChange = () => {
-  console.log(list.value)
+const handleChange = (val: DragChange) => {
+  if (val.added) {
+    useFormList.activeItem.value = val.added.element
+  }
 }
 export default function () {
   return (
     <el-form>
       <draggable
-        class="h-full"
+        class="h-full p-2"
         list={list.value}
         group={group}
         item-key="render"

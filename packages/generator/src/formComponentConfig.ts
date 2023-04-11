@@ -12,7 +12,9 @@ export const inputConfig: FormComponent[] = [
       span: 24,
     },
     __prop__: {
-
+      style: {
+        width: '100%'
+      }
     }
   },
 ]
@@ -28,7 +30,9 @@ export const selectConfig: FormComponent[] = [
       span: 24,
     },
     __prop__: {
-
+      style: {
+        width: '100%'
+      }
     },
     __slot__: {
       options: [
@@ -47,7 +51,9 @@ export const selectConfig: FormComponent[] = [
       span: 24,
     },
     __prop__: {
-
+      style: {
+        width: '100%'
+      }
     }
   },
 ]

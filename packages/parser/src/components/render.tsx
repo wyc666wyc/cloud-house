@@ -6,9 +6,16 @@ type Props = {
 export default function (props: Props) {
   const { attr } = props
   const { __config__: config, __prop__: prop } = attr
+  // const 
   return (
-    <div>
-      { h(resolveComponent(config.tag), prop) }
-    </div>
+    <>
+      { h(resolveComponent(config.tag), {
+        style: prop.style,
+      }) }
+    </>
   )
+}
+
+const createProps = (props: any) => {
+
 }

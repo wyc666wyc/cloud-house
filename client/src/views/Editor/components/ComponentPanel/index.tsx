@@ -50,7 +50,6 @@ const dragItemSlot = (item: { element: FormComponent }) => {
 }
 const cloneElement = (item: FormComponent) => {
   const clone = cloneDeep(item)
-  useFormList.activeItem.value = clone
   return cloneDeep(item)
 }
 const handleClick = (item: FormComponent) => () => {

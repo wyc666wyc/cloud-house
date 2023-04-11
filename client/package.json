@@ -13,7 +13,8 @@
     "@dynamic-form/parser": "workspace:^",
     "@dynamic-form/render": "workspace:^",
     "@dynamic-form/utils": "workspace:^",
-    "vuedraggable": "^4.1.0"
+    "vuedraggable": "^4.1.0",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "unplugin-auto-import": "^0.15.2",

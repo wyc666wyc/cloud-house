@@ -8,7 +8,7 @@ export default function (props: Props) {
   const { __config__: config, __prop__: prop } = attr
   return (
     <div>
-      { h(resolveComponent(config.tag)) }
+      { h(resolveComponent(config.tag), prop) }
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { FormComponent } from "@dynamic-form/generator/src/config"
 
 const list = ref<FormComponent[]>([])
+const activeItem = ref<FormComponent | null>(null)
 
 const addItem = (item: FormComponent) => {
   list.value.push(item)
@@ -15,6 +16,7 @@ const clear = () => {
 
 export default {
   list,
+  activeItem,
   addItem,
   deleteItem,
   clear

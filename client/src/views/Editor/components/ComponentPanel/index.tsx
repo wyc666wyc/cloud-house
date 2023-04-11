@@ -31,7 +31,9 @@ const componentGroup = (props: { list: FormComponent[] }) => {
   return props.list.length ? (
     <draggable
       group={group}
+      clone={cloneElement}
       sort={false}
+      delay={0}
       item-key="test"
       list={props.list}
       v-slots={{ item: dragItemSlot }}
@@ -46,6 +48,13 @@ const dragItemSlot = (item: { element: FormComponent }) => {
     <el-button onClick={handleClick(item.element)}>{config.name}</el-button>
   )
 }
+const cloneElement = (item: FormComponent) => {
+  const clone = cloneDeep(item)
+  useFormList.activeItem.value = clone
+  return cloneDeep(item)
+}
 const handleClick = (item: FormComponent) => () => {
-  useFormList.addItem(cloneDeep(item))
+  const clone = cloneDeep(item)
+  useFormList.activeItem.value = clone
+  useFormList.addItem(clone)
 }

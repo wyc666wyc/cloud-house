@@ -29,6 +29,11 @@ export const selectConfig: FormComponent[] = [
     },
     __prop__: {
 
+    },
+    __slot__: {
+      options: [
+        
+      ]
     }
   },
   {

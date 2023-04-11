@@ -29,9 +29,18 @@ type FormComponentProp = {
   clearable?: boolean,
   maxlength?: number,
   placeholder?: string,
+
+  'prefix-icon'?: string,
+  'suffix-icon'?: string,
+  'show-word-limit'?: boolean,
 }
 type FormComponentSlot = {
-
+  options?: FormComponentSlotOption[],
+}
+type FormComponentSlotOption = {
+  label: string,
+  value: string | number,
+  disabled?: boolean,
 }
 type FormComponent = {
   type: FormComponentType

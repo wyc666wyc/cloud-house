@@ -9,7 +9,6 @@ type Props = {
 }
 const group = {
   name: 'form',
-  pull: 'clone'
 }
 export default function (props: Props) {
   const { element, index } = props
@@ -24,15 +23,15 @@ export default function (props: Props) {
 const itemBtn = (element: FormComponent, index: number) => {
   return (
     <div>
-    <el-button onClick={handleDelete(index)}>删除</el-button>
-    <el-button onClick={handleCopy(element)}>复制</el-button>
-  </div>
+      <el-button onClick={handleDelete(index)}>删除</el-button>
+      <el-button onClick={handleCopy(element)}>复制</el-button>
+    </div>
   )
 }
 const layouts = {
   col(element: FormComponent, index: number) {
     return (
-      <el-col>
+      <el-col onClick={handleClick(element)}>
         <el-form-item label={element.__config__.name}>
           <dynamic-render attr={element}></dynamic-render>
         </el-form-item>
@@ -43,7 +42,7 @@ const layouts = {
   row(element: FormComponent, index: number) {
     return (
       <el-row>
-        <el-col>
+        <el-col onClick={handleClick(element)}>
           <draggable
             class="drag-row"
             list={element.__config__.children}
@@ -64,9 +63,13 @@ const layouts = {
 }
 const renderChildren = (item: { element: FormComponent, index: number }) => {
   const { __config__: config, __prop__: prop } = item.element
-  const children = item.element.__config__.children
   const layout = layouts[config.layout]
   return layout(item.element, item.index)
+}
+const handleClick = (element: FormComponent) => (e: MouseEvent) => {
+  e.preventDefault()
+  useFormList.activeItem.value = element
+  console.log(element)
 }
 const handleDelete = (index: number) => () => {
   useFormList.deleteItem(index)

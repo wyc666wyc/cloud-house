@@ -24,9 +24,11 @@ export default function () {
         class="h-full p-2"
         list={list.value}
         group={group}
+        scroll={true}
         item-key="render"
         animation={200}
         delay={0}
+        force-fallback={true}
         ghost-class="ghostClass"
         chosen-class="chosenClass"
         drag-class="dragClass"

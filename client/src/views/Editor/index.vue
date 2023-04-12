@@ -3,7 +3,7 @@
     <ComponentPanel class="w-70 border-right"></ComponentPanel>
     <div class="flex flex-col flex-1">
       <Tool></Tool>
-      <CanvasPanel class="flex-auto"></CanvasPanel>
+      <CanvasPanel class="canvasPanel"></CanvasPanel>
     </div>
     <AttributePanel class="w-80 border-left"></AttributePanel>
   </div>
@@ -20,5 +20,13 @@ import Tool from './components/ToolPanel/index';
 }
 .border-right {
   border-right: 1px solid #e5e7eb;
+}
+.canvasPanel {
+  height: 0;
+  flex: 1 0 auto;
+  overflow-y: auto;
+}
+.ghostClass {
+  opacity: 0.1;
 }
 </style>

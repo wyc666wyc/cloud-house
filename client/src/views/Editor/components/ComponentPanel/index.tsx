@@ -26,7 +26,8 @@ export default function () {
 const componentGroup = (props: { list: FormComponent[] }) => {
   const group = {
     name: "form",
-    pull: "clone"
+    pull: "clone",
+    put: false
   }
   return props.list.length ? (
     <draggable
@@ -34,7 +35,8 @@ const componentGroup = (props: { list: FormComponent[] }) => {
       clone={cloneElement}
       sort={false}
       delay={0}
-      item-key="test"
+      force-fallback={true}
+      item-key="component"
       list={props.list}
       v-slots={{ item: dragItemSlot }}
     />
@@ -45,11 +47,12 @@ const componentGroup = (props: { list: FormComponent[] }) => {
 const dragItemSlot = (item: { element: FormComponent }) => {
   const { __config__: config, __prop__: prop } = item.element
   return (
-    <el-button onClick={handleClick(item.element)}>{config.name}</el-button>
+    <div>
+      <el-button onClick={handleClick(item.element)}>{config.name}</el-button>
+    </div>
   )
 }
 const cloneElement = (item: FormComponent) => {
-  const clone = cloneDeep(item)
   return cloneDeep(item)
 }
 const handleClick = (item: FormComponent) => () => {

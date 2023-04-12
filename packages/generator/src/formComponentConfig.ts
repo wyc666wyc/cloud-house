@@ -14,7 +14,8 @@ export const inputConfig: FormComponent[] = [
     __prop__: {
       style: {
         width: '100%'
-      }
+      },
+      placeholder: '请输入',
     }
   },
 ]
@@ -32,13 +33,21 @@ export const selectConfig: FormComponent[] = [
     __prop__: {
       style: {
         width: '100%'
-      }
+      },
+      placeholder: '请选择',
     },
     __slot__: {
       options: [
-        
+        {
+          label: '选项一',
+          value: '1',
+        },
+        {
+          label: '选项二',
+          value: '2',
+        },
       ]
-    }
+    },
   },
   {
     type: 'select',
@@ -54,7 +63,7 @@ export const selectConfig: FormComponent[] = [
       style: {
         width: '100%'
       }
-    }
+    },
   },
 ]
 export const layoutConfig: FormComponent[] = [

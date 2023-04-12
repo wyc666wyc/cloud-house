@@ -23,13 +23,12 @@ type FormComponentConfig = {
   children?: FormComponent[],
 }
 type FormComponentProp = {
-  style?: CSSProperties
   readonly?: boolean,
   disabled?: boolean
   clearable?: boolean,
   maxlength?: number,
   placeholder?: string,
-
+  style?: CSSProperties,
   'prefix-icon'?: string,
   'suffix-icon'?: string,
   'show-word-limit'?: boolean,

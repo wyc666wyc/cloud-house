@@ -9,9 +9,7 @@ export default function (props: Props) {
   // const 
   return (
     <>
-      { h(resolveComponent(config.tag), {
-        style: prop.style,
-      }) }
+      { h(resolveComponent(config.tag)) }
     </>
   )
 }

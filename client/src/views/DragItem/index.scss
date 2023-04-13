@@ -1,13 +1,22 @@
 .chosenClass {
-  background-color: aquamarine;
+  background-color: rgb(182, 216, 255);
 }
 .drag {
   &-item {
     position: relative;
     cursor: move;
+    &-btn {
+      position: absolute;
+      display: none;
+      top: -13px;
+      right: 8px;
+    }
     &:hover, &-active {
       .el-form-item {
         background-color: #f5f7fa;
+      }
+      &-btn {
+        display: block;
       }
     }
     .el-form-item {
@@ -15,14 +24,22 @@
       border-radius: 4px;
     }
   }
-  &-itemBtn {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
   &-row {
     min-height: 80px;
-    border: 1px dashed #06628d;
     padding: 10px;
+    margin-bottom: 12px;
+    border: 1px dashed #78868d;
+    color: #78868d;
+    >div {
+      height: 100%;
+    }
+    &-title {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    &:hover, &-active {
+      color: #2296f5;
+      border-color: #2296f5;
+    }
   }
 }

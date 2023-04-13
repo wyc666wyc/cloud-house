@@ -2,6 +2,7 @@ import { h, resolveComponent, defineComponent, ref, SetupContext } from "vue"
 import type { FormComponent } from "@dynamic-form/generator/src/config"
 import DraggableItem from "../../../DragItem"
 import useFormList from "@/hooks/useFormList"
+import './index.scss'
 
 type DragChange = {
   added?: {
@@ -21,7 +22,7 @@ export default function () {
   return (
     <el-form>
       <draggable
-        class="h-full p-2"
+        class="canvasPanel"
         list={list.value}
         group={group}
         scroll={true}

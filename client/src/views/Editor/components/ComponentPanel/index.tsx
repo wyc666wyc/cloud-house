@@ -12,13 +12,13 @@ import useFormList from "@/hooks/useFormList"
 export default function () {
   return (
     <div>
-      <div>输入型组件</div>
+      <div class="my-2">输入型组件</div>
       {<componentGroup list={inputFormComponent}></componentGroup>}
-      <div>选择型组件</div>
+      <div class="my-2">选择型组件</div>
       {<componentGroup list={selectFormComponent}></componentGroup>}
-      <div>布局型组件</div>
+      <div class="my-2">布局型组件</div>
       {<componentGroup list={layoutFormComponent}></componentGroup>}
-      <div>自定义组件</div>
+      <div class="my-2">自定义组件</div>
       {<componentGroup list={customFormComponent}></componentGroup>}
     </div>
   )
@@ -31,6 +31,7 @@ const componentGroup = (props: { list: FormComponent[] }) => {
   }
   return props.list.length ? (
     <draggable
+      class="flex gap-4"
       group={group}
       clone={cloneElement}
       sort={false}

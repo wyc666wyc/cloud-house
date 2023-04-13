@@ -26,9 +26,9 @@ export default function (props: Props) {
 }
 const itemBtn = (element: FormComponent, index: number) => {
   return (
-    <div class="drag-itemBtn">
-      <el-button onClick={handleDelete(index)} type="danger" icon={Delete} circle />
-      <el-button onClick={handleCopy(element)} type="primary" icon={DocumentCopy} circle />
+    <div class="drag-item-btn">
+      <el-button onClick={handleDelete(index)} type="danger" size="small" icon={Delete} circle />
+      <el-button onClick={handleCopy(element)} type="primary" size="small" icon={DocumentCopy} circle />
     </div>
   )
 }
@@ -45,28 +45,36 @@ const layouts = {
       </el-col>
     )
   },
-  row(element: FormComponent, index: number) {
+  sub(element: FormComponent, index: number) {
     const { __config__: config, __prop__: prop } = element
-    const className = { 'drag-item': true, 'drag-row': true, 'drag-item-active': useFormList.activeItem.value === element }
+    const className = { 'drag-row': true, 'drag-row-active': useFormList.activeItem.value === element }
     return (
-      <el-row>
-        <el-col class={className} span={config.span} onClick={handleClick(element)}>
+      <el-col class='drag-item' span={config.span}>
+        <el-row class={className} onClick={handleClick(element)}>
+          <div class='drag-row-title'>{ '子表单' }</div>
           <draggable
             list={element.__config__.children}
             group={group}
             item-key="render"
             animation={200}
+            delay={0}
+            force-fallback={true}
             ghost-class="ghostClass"
             chosen-class="chosenClass"
             drag-class="dragClass"
             v-slots={{ item: renderChildren }}
           >
           </draggable>
-        </el-col>
+        </el-row>
         { itemBtn(element, index) }
-      </el-row>
+      </el-col>
     )
   },
+  block() {
+    return (
+      <div>block</div>
+    )
+  }
 }
 const renderChildren = (item: { element: FormComponent, index: number }) => {
   const { __config__: config, __prop__: prop } = item.element

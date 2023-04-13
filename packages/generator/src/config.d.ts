@@ -21,8 +21,10 @@ type FormComponentConfig = {
   isHidden?: boolean,
   icon?: string,
   children?: FormComponent[],
+  renderKey: string,
 }
 type FormComponentProp = {
+  value: string | number | Array<unknown> | null | undefined,
   readonly?: boolean,
   disabled?: boolean
   clearable?: boolean,
@@ -46,6 +48,7 @@ type FormComponent = {
   __config__: FormComponentConfig,
   __prop__: FormComponentProp,
   __slot__?: FormComponentSlot,
+  __vModel__?: string,
 }
 
 type TransferRule = {

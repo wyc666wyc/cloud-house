@@ -16,7 +16,7 @@ import Tool from './components/ToolPanel/index';
 </script>
 <style scoped lang="scss">
 :deep(.el-form-item) {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .border-left {
   border-left: 1px solid #e5e7eb;

@@ -39,7 +39,7 @@ const layouts = {
     return (
       <el-col class={className} span={config.span} onClick={handleClick(element)}>
         <el-form-item label={config.name}>
-          <dynamic-render attr={element}></dynamic-render>
+          <dynamic-render attr={element} modelValue={prop.value}></dynamic-render>
         </el-form-item>
         { itemBtn(element, index) }
       </el-col>
@@ -47,25 +47,23 @@ const layouts = {
   },
   sub(element: FormComponent, index: number) {
     const { __config__: config, __prop__: prop } = element
-    const className = { 'drag-row': true, 'drag-row-active': useFormList.activeItem.value === element }
+    const className = { 'drag-item': true, 'drag-row': true, 'drag-row-active': useFormList.activeItem.value === element }
     return (
-      <el-col class='drag-item' span={config.span}>
-        <el-row class={className} onClick={handleClick(element)}>
-          <div class='drag-row-title'>{ '子表单' }</div>
-          <draggable
-            list={element.__config__.children}
-            group={group}
-            item-key="render"
-            animation={200}
-            delay={0}
-            force-fallback={true}
-            ghost-class="ghostClass"
-            chosen-class="chosenClass"
-            drag-class="dragClass"
-            v-slots={{ item: renderChildren }}
-          >
-          </draggable>
-        </el-row>
+      <el-col class={className} span={config.span} onClick={handleClick(element)}>
+        <div class='drag-row-title'>{ config.name }</div>
+        <draggable
+          list={element.__config__.children}
+          group={group}
+          item-key="render"
+          animation={200}
+          delay={0}
+          force-fallback={true}
+          ghost-class="ghostClass"
+          chosen-class="chosenClass"
+          drag-class="dragClass"
+          v-slots={{ item: renderChildren }}
+        >
+        </draggable>
         { itemBtn(element, index) }
       </el-col>
     )
@@ -83,6 +81,7 @@ const renderChildren = (item: { element: FormComponent, index: number }) => {
 }
 const handleClick = (element: FormComponent) => (e: MouseEvent) => {
   e.preventDefault()
+  e.stopPropagation()
   useFormList.activeItem.value = element
   console.log(element)
 }

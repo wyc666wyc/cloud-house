@@ -1,116 +1,131 @@
-import type { FormComponent } from './config'
+import type { FormComponent } from "./config"
 
 export const inputConfig: FormComponent[] = [
   {
-    type: 'input',
+    type: "input",
     __config__: {
-      name: '输入框',
-      tag: 'input',
-      defaultValue: '',
+      name: "输入框",
+      tag: "input",
+      defaultValue: "",
       required: false,
-      layout: 'col',
+      layout: "col",
       span: 24,
+      renderKey: "",
     },
     __prop__: {
+      value: null,
       style: {
-        width: '100%'
+        width: "100%",
       },
-      placeholder: '请输入',
-    }
+      placeholder: "请输入",
+    },
+    __vModel__: "",
   },
 ]
 export const selectConfig: FormComponent[] = [
   {
-    type: 'select',
+    type: "select",
     __config__: {
-      name: '选择框',
-      tag: 'select',
-      defaultValue: '',
+      name: "选择框",
+      tag: "select",
+      defaultValue: "",
       required: false,
-      layout: 'col',
+      layout: "col",
       span: 24,
+      renderKey: "",
     },
     __prop__: {
+      value: null,
       style: {
-        width: '100%'
+        width: "100%",
       },
-      placeholder: '请选择',
+      placeholder: "请选择",
     },
     __slot__: {
       options: [
         {
-          label: '选项一',
-          value: '1',
+          label: "选项一",
+          value: 1,
         },
         {
-          label: '选项二',
-          value: '2',
+          label: "选项二",
+          value: 2,
         },
-      ]
+      ],
     },
+    __vModel__: "",
   },
   {
-    type: 'select',
+    type: "select",
     __config__: {
-      name: '级联选择',
-      tag: 'cascader',
-      defaultValue: '',
+      name: "级联选择",
+      tag: "cascader",
+      defaultValue: "",
       required: false,
-      layout: 'col',
+      layout: "col",
       span: 24,
+      renderKey: "",
     },
     __prop__: {
+      value: null,
       style: {
-        width: '100%'
-      }
+        width: "100%",
+      },
     },
+    __vModel__: "",
   },
 ]
 export const layoutConfig: FormComponent[] = [
   {
-    type: 'layout',
+    type: "layout",
     __config__: {
-      name: '区块',
-      tag: 'block',
-      defaultValue: '',
+      name: "区块",
+      tag: "block",
+      defaultValue: "",
       required: false,
-      layout: 'block',
+      layout: "block",
       span: 24,
-      children: []
+      children: [],
+      renderKey: "",
     },
     __prop__: {
-
-    }
+      value: null,
+    },
+    __vModel__: "",
   },
   {
-    type: 'layout',
+    type: "layout",
     __config__: {
-      name: '子表单',
-      tag: 'sub',
-      defaultValue: '',
+      name: "子表单",
+      tag: "sub",
+      defaultValue: "",
       required: false,
-      layout: 'sub',
+      layout: "sub",
       span: 24,
-      children: []
+      children: [],
+      renderKey: "",
     },
     __prop__: {
-
-    }
+      value: null,
+    },
+    __vModel__: "",
   },
 ]
 export const customConfig: FormComponent[] = [
   {
-    type: 'custom',
+    type: "custom",
     __config__: {
-      name: '示例',
-      tag: 'Example',
-      defaultValue: '',
+      name: "示例",
+      tag: "Example",
+      defaultValue: "",
       required: false,
-      layout: 'col',
+      layout: "col",
       span: 24,
+      renderKey: "",
     },
     __prop__: {
-
-    }
+      value: null,
+    },
+    __vModel__: "",
   },
 ]

@@ -1,5 +1,6 @@
 // import { h, resolveComponent, defineComponent } from 'vue'
 import { cloneDeep } from 'lodash-es'
+import { getRenderKey } from '@dynamic-form/utils/src/index'
 import { FormComponent } from "@dynamic-form/generator/src/config"
 import {
   inputFormComponent,
@@ -53,11 +54,15 @@ const dragItemSlot = (item: { element: FormComponent }) => {
     </div>
   )
 }
+const getClone = (item: FormComponent) => {
+  const renderKey = getRenderKey()
+  return cloneDeep({ ...item, __config__: {...item.__config__, renderKey}, __vModel__: renderKey })
+}
 const cloneElement = (item: FormComponent) => {
-  return cloneDeep(item)
+  return cloneDeep(getClone(item))
 }
 const handleClick = (item: FormComponent) => () => {
-  const clone = cloneDeep(item)
+  const clone = getClone(item)
   useFormList.activeItem.value = clone
   useFormList.addItem(clone)
 }

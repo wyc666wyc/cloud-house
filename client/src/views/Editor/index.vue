@@ -15,6 +15,9 @@ import CanvasPanel from './components/CanvasPanel/index'
 import Tool from './components/ToolPanel/index';
 </script>
 <style scoped lang="scss">
+:deep(.el-form-item) {
+  margin-bottom: 12px;
+}
 .border-left {
   border-left: 1px solid #e5e7eb;
 }

@@ -70,11 +70,11 @@ export const layoutConfig: FormComponent[] = [
   {
     type: 'layout',
     __config__: {
-      name: '容器',
-      tag: 'container',
+      name: '区块',
+      tag: 'block',
       defaultValue: '',
       required: false,
-      layout: 'row',
+      layout: 'block',
       span: 24,
       children: []
     },
@@ -89,7 +89,7 @@ export const layoutConfig: FormComponent[] = [
       tag: 'sub',
       defaultValue: '',
       required: false,
-      layout: 'row',
+      layout: 'sub',
       span: 24,
       children: []
     },

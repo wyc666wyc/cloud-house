@@ -24,10 +24,11 @@ type FormComponentConfig = {
   renderKey: string,
 }
 type FormComponentProp = {
-  value: string | number | Array<unknown> | null | undefined,
+  modelValue: string | number | Array<unknown> | null | undefined,
   readonly?: boolean,
   disabled?: boolean
   clearable?: boolean,
+  filterable?: boolean,
   maxlength?: number,
   placeholder?: string,
   style?: CSSProperties,

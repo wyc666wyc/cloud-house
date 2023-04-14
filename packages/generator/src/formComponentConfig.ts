@@ -13,7 +13,8 @@ export const inputConfig: FormComponent[] = [
       renderKey: "",
     },
     __prop__: {
-      value: null,
+      modelValue: null,
+      clearable: true,
       style: {
         width: "100%",
       },
@@ -35,7 +36,9 @@ export const selectConfig: FormComponent[] = [
       renderKey: "",
     },
     __prop__: {
-      value: null,
+      modelValue: null,
+      clearable: true,
+      filterable: true,
       style: {
         width: "100%",
       },
@@ -67,7 +70,7 @@ export const selectConfig: FormComponent[] = [
       renderKey: "",
     },
     __prop__: {
-      value: null,
+      modelValue: null,
       style: {
         width: "100%",
       },
@@ -89,7 +92,7 @@ export const layoutConfig: FormComponent[] = [
       renderKey: "",
     },
     __prop__: {
-      value: null,
+      modelValue: null,
     },
     __vModel__: "",
   },
@@ -106,7 +109,7 @@ export const layoutConfig: FormComponent[] = [
       renderKey: "",
     },
     __prop__: {
-      value: null,
+      modelValue: null,
     },
     __vModel__: "",
   },
@@ -124,7 +127,7 @@ export const customConfig: FormComponent[] = [
       renderKey: "",
     },
     __prop__: {
-      value: null,
+      modelValue: null,
     },
     __vModel__: "",
   },

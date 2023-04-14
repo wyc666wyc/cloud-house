@@ -36,10 +36,14 @@ const layouts = {
   col(element: FormComponent, index: number) {
     const { __config__: config, __prop__: prop } = element
     const className = { 'drag-item': true, 'drag-item-active': useFormList.activeItem.value === element }
+    const handleInput = (val: any) => {
+      console.log('handleInput', val)
+      prop.modelValue = val
+    }
     return (
       <el-col class={className} span={config.span} onClick={handleClick(element)}>
         <el-form-item label={config.name}>
-          <dynamic-render attr={element} modelValue={prop.value}></dynamic-render>
+          <dynamic-render attr={element} onInput={handleInput}></dynamic-render>
         </el-form-item>
         { itemBtn(element, index) }
       </el-col>

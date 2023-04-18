@@ -5,7 +5,11 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('@/views/Home/index.vue')
-  }
+  },
+  {
+    path: '/table',
+    component: () => import('@/views/table')
+  },
 ]
 
 const router = createRouter({

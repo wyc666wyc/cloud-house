@@ -1,0 +1,228 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "table",
+        "tag": "table",
+        "label": "table",
+        "hideIndex": false,
+        "layoutTree": true,
+        "children": [
+          {
+            "__config__": {
+              "label": "流域",
+              "labelWidth": null,
+              "showLabel": true,
+              "hideIndex": false,
+              "isHidden": false,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 24,
+              "regList": [],
+              "formId": 101,
+              "renderKey": "1011681724269846"
+            },
+            "__slot__": { "prepend": "", "append": "" },
+            "placeholder": "请输入流域",
+            "style": { "width": "100%" },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field101"
+          },
+          {
+            "__config__": {
+              "label": "设区市",
+              "showLabel": true,
+              "hideIndex": false,
+              "isHidden": false,
+              "labelWidth": null,
+              "tag": "canton-cascader",
+              "tagIcon": "canton",
+              "layout": "colFormItem",
+              "dataType": "dynamic",
+              "defaultValue": "",
+              "span": 24,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "formId": 103,
+              "renderKey": "1031681724280644"
+            },
+            "__slot__": {},
+            "props": { "iconClass": "Edit" },
+            "__vModel__": "field103",
+            "wholeCountry": 0,
+            "placeholder": "请选择设区市",
+            "style": { "width": "100%" },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false
+          },
+          {
+            "__config__": {
+              "label": "水体组",
+              "tag": "block",
+              "tagIcon": "block",
+              "layout": "block",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "所在水体1",
+                    "labelWidth": null,
+                    "showLabel": true,
+                    "hideIndex": false,
+                    "isHidden": false,
+                    "changeTag": true,
+                    "tag": "el-input",
+                    "tagIcon": "input",
+                    "required": true,
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "regList": [],
+                    "formId": 102,
+                    "renderKey": "1021681724270882"
+                  },
+                  "__slot__": { "prepend": "", "append": "" },
+                  "placeholder": "请输入所在水体",
+                  "style": { "width": "100%" },
+                  "clearable": true,
+                  "prefix-icon": "",
+                  "suffix-icon": "",
+                  "maxlength": null,
+                  "show-word-limit": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "__vModel__": "field102"
+                },
+                {
+                  "__config__": {
+                    "label": "所在水体2",
+                    "labelWidth": null,
+                    "showLabel": true,
+                    "hideIndex": false,
+                    "isHidden": false,
+                    "changeTag": true,
+                    "tag": "el-input",
+                    "tagIcon": "input",
+                    "required": true,
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "regList": [],
+                    "formId": 102,
+                    "renderKey": "1021681724270882"
+                  },
+                  "__slot__": { "prepend": "", "append": "" },
+                  "placeholder": "请输入所在水体",
+                  "style": { "width": "100%" },
+                  "clearable": true,
+                  "prefix-icon": "",
+                  "suffix-icon": "",
+                  "maxlength": null,
+                  "show-word-limit": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "__vModel__": "field102"
+                }
+              ]
+            }
+          },
+          {
+            "__config__": {
+              "label": "名称",
+              "labelWidth": null,
+              "showLabel": true,
+              "hideIndex": false,
+              "isHidden": false,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 24,
+              "regList": [],
+              "formId": 104,
+              "renderKey": "1041681724284656"
+            },
+            "__slot__": { "prepend": "", "append": "" },
+            "placeholder": "请输入名称",
+            "style": { "width": "100%" },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field104"
+          },
+          {
+            "__config__": {
+              "label": "属性（地级、县级、乡镇级及以下）",
+              "labelWidth": null,
+              "showLabel": true,
+              "hideIndex": false,
+              "isHidden": false,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 24,
+              "regList": [],
+              "formId": 105,
+              "renderKey": "1051681724328983"
+            },
+            "__slot__": { "prepend": "", "append": "" },
+            "placeholder": "请输入属性（地级、县级、乡镇级及以下）",
+            "style": { "width": "100%" },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field105"
+          },
+          {
+            "__config__": {
+              "layout": "colFormItem",
+              "tag": "option",
+              "label": "操作",
+              "fixed": "right",
+              "width": 100,
+              "align": "center",
+              "headerAlign": "center"
+            }
+          }
+        ],
+        "defaultValue": [],
+        "isHiddenList": []
+      },
+      "__vModel__": "fieldtable"
+    }
+  ],
+  "describe": "",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "medium",
+  "labelPosition": "top",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": true,
+  "formType": "base",
+  "formName": "饮用水水源地名单",
+  "uuid": "form_22731014466313314425073224035134"
+}

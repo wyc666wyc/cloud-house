@@ -2,10 +2,10 @@ import { utils, write } from "xlsx"
 import type { WritingOptions, WorkSheet, WorkBook } from 'xlsx/types'
 import data from "./data.json"
 
-export function tableToSheet(el: string, colWidths: number[] = []) {
+export function tableToSheet(el: string, colCount: number, name: string = "sheet1.xlsx") {
   const sheet = utils.table_to_sheet(document.querySelector(el))
-  sheet["!cols"] = colWidths.map(width => ({ wpx: width }))
-  openDownloadDialog(sheet2blob(sheet), "sheet1.xlsx")
+  sheet["!cols"] = Array.from({ length: colCount }).map(() => ({ wpx: 100 }))
+  openDownloadDialog(sheet2blob(sheet), name)
 }
 function sheet2blob(sheet: WorkSheet, sheetName: string = "sheet1"): Blob {
   const workbook: WorkBook = {

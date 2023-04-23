@@ -34,7 +34,7 @@ const buildChildren = (slot: FormComponentSlot | undefined) => {
   if (!slot) return () => undefined
   if (slot.options) {
     return slot.options.map((item) => (
-      <el-option value={item.value} disabled={item.disabled}>{item.label}</el-option>
+      <el-option value={item.value} label={item.label} disabled={item.disabled}></el-option>
     ))
   }
 }

@@ -1,6 +1,6 @@
-import RouterIndex from "@/router"
+import Router from "@/router"
 export default function App() {
   return (
-    <RouterIndex></RouterIndex>
+    <Router></Router>
   )
 }

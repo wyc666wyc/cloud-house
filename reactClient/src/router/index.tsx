@@ -10,7 +10,7 @@ export default function Router() {
       element: <Home />,
     },
     {
-      path: 'table',
+      path: 'table/:id',
       element: <Table />,
     },
     {

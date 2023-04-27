@@ -37,27 +37,6 @@ function openDownloadDialog(blob: Blob, saveName: string = "") {
   const aLink: HTMLAnchorElement = document.createElement("a")
   aLink.href = url
   aLink.download = saveName
-  var event
-  if (window.MouseEvent) event = new MouseEvent("click")
-  else {
-    event = document.createEvent("MouseEvents")
-    event.initMouseEvent(
-      "click",
-      true,
-      false,
-      window,
-      0,
-      0,
-      0,
-      0,
-      0,
-      false,
-      false,
-      false,
-      false,
-      0,
-      null
-    )
-  }
+  const event = new MouseEvent("click")
   aLink.dispatchEvent(event)
 }

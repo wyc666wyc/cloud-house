@@ -2,6 +2,8 @@ import { useRoutes, RouteObject } from 'react-router-dom'
 import Home from '@/views/Home'
 import Table from '@/views/Table'
 import Main from '@/views/Main'
+import Reducer from '@/views/Reducer'
+import NotFound from '@/views/Error/404'
 
 export default function Router() {
   const routes: RouteObject[] = [
@@ -26,7 +28,15 @@ export default function Router() {
           element: <div>page2</div>
         },
       ]
-    }
+    },
+    {
+      path: 'reducer',
+      element: <Reducer />,
+    },
+    {
+      path: '*',
+      element: <NotFound />,
+    },
   ]
   return useRoutes(routes)
 }

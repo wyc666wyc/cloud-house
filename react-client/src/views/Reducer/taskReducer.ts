@@ -39,12 +39,13 @@ export function taskReducer(tasks: Task[], action: ExpandAction): Task[] {
 
 function setMethod() {
   const methods = ["get", "post", "delete", "put"];
-  return methods.reduce((map: any, method: string) => {
+  const httpMethods =  methods.reduce((map: any, method: string) => {
     map[method] = (url: string, options: Object) => {
       console.log(method)
     }
     return map
   }, {})
+  return httpMethods
 }
 const res = setMethod()
 console.log(res)

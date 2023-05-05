@@ -3,6 +3,7 @@ import Home from '@/views/Home'
 import Table from '@/views/Table'
 import Main from '@/views/Main'
 import Reducer from '@/views/Reducer'
+import Cesium from '@/views/Cesium'
 import NotFound from '@/views/Error/404'
 
 export default function Router() {
@@ -10,6 +11,10 @@ export default function Router() {
     {
       path: '',
       element: <Home />,
+    },
+    {
+      path: 'cesium',
+      element: <Cesium />,
     },
     {
       path: 'table/:id',

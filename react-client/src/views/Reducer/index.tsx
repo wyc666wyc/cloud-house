@@ -3,6 +3,7 @@ import { taskReducer } from './taskReducer'
 import AddTask from "./AddTask"
 import TaskList from "./TaskList"
 import { ExpandReducer, TASK_ACTION } from './taskReducer'
+import useStore from "@/store"
 
 export interface Task {
   id: number
@@ -13,6 +14,7 @@ export interface Task {
 export default function TaskApp() {
   // const [tasks, setTasks] = useState(initialTasks)
   const [tasks, dispatch] = useReducer<ExpandReducer>(taskReducer, initialTasks)
+  const count = useStore(state => state.count)
 
   function handleAddTask(text: string) {
     dispatch({
@@ -63,6 +65,7 @@ export default function TaskApp() {
   return (
     <>
       <h1>G</h1>
+      <div>count{ count }</div>
       <AddTask onAddTask={handleAddTask} />
       <TaskList
         tasks={tasks}
@@ -75,7 +78,7 @@ export default function TaskApp() {
 
 let nextId = 3
 const initialTasks = [
-  { id: 0, text: "参观卡夫卡博物馆", done: true },
-  { id: 1, text: "看木偶戏", done: false },
-  { id: 2, text: "打卡列侬墙", done: false }
+  { id: 0, text: "1", done: true },
+  { id: 1, text: "2", done: false },
+  { id: 2, text: "3", done: false }
 ]

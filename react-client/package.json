@@ -7,7 +7,11 @@
     "dev": "vite"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "@dynamic-form/generator": "workspace:^",
+    "@dynamic-form/parser": "workspace:^",
+    "@dynamic-form/render": "workspace:^",
+    "@dynamic-form/utils": "workspace:^"
   },
   "keywords": [],
   "author": "",

@@ -5,7 +5,9 @@ async function routes(fastify: FastifyInstance, options) {
       l: 1
     }
   })
-  fastify.post
+  fastify.get('/getCount', async (req, reply) => {
+    return 100
+  })
 }
 
 export default routes

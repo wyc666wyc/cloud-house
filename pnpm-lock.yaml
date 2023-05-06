@@ -182,6 +182,24 @@ importers:
 
   packages/utils: {}
 
+  react-client:
+    dependencies:
+      '@dynamic-form/generator':
+        specifier: workspace:^
+        version: link:../packages/generator
+      '@dynamic-form/parser':
+        specifier: workspace:^
+        version: link:../packages/parser
+      '@dynamic-form/render':
+        specifier: workspace:^
+        version: link:../packages/render
+      '@dynamic-form/utils':
+        specifier: workspace:^
+        version: link:../packages/utils
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+
   server:
     dependencies:
       '@dynamic-form/parser':

@@ -15,7 +15,8 @@ export default function TaskApp() {
   // const [tasks, setTasks] = useState(initialTasks)
   const [tasks, dispatch] = useReducer<ExpandReducer>(taskReducer, initialTasks)
   const count = useStore(state => state.count)
-
+  const loading = useStore(state => state.countLoading)
+  const dogs = useStore(state => state.dogs)
   function handleAddTask(text: string) {
     dispatch({
       type: TASK_ACTION.ADD,
@@ -66,12 +67,18 @@ export default function TaskApp() {
     <>
       <h1>G</h1>
       <div>count{ count }</div>
+      { loading ? 'loading' : null }
       <AddTask onAddTask={handleAddTask} />
       <TaskList
         tasks={tasks}
         onChangeTask={handleChangeTask}
         onDeleteTask={handleDeleteTask}
       />
+      {
+        dogs?.map(dog => (
+          <div key={dog}>{ dog }</div>
+        ))
+      }
     </>
   )
 }

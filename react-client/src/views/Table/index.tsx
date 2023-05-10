@@ -1,11 +1,14 @@
 import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 import Parser, { ParserProps } from '@/components/Parser'
 export default function () {
   const { id } = useParams()
+  const [data, setData] = useState(0)
   return (
     <div>
-      <Parser lifeCycle={lifeCycle}></Parser>
+      <Parser lifeCycle={lifeCycle} data={data}></Parser>
       <div>{ id }</div>
+      <button onClick={() => setData(() => data + 1)}>click</button>
     </div>
   )
 }

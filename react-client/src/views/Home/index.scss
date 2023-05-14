@@ -1,0 +1,30 @@
+.drawer {
+  width: 200px;
+  height: 100vh;
+  background-color: aquamarine;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.enter {
+  animation: enterIn 0.5s;
+}
+.leave {
+  animation: leaveTo 0.5s;
+}
+@keyframes enterIn {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes leaveTo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}

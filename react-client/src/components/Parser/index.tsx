@@ -1,4 +1,4 @@
-import { useEffect, useState, memo, useMemo } from 'react'
+import { useEffect, useState, memo, useMemo, useCallback } from 'react'
 export type ParserProps = {
   data: number
   lifeCycle: {
@@ -9,15 +9,18 @@ export type ParserProps = {
   }
 }
 export type CounterProps = {
-  count?: number,
+  count?: {
+    count: number
+  },
   onClick?: () => void
 }
 export default function Parser(props: ParserProps) {
   const { data, lifeCycle } = props
-  const [count, setCount] = useState()
-  // const countMemo = useMemo(() => (
-  //   count
-  // ), [count])
+  const [count, setCount] = useState(0)
+  const countObj = { count }
+  const countMemo = useMemo(() => (
+    { count }
+  ), [count])
   const { beforeLoad, loaded, beforeRequest, requested } = lifeCycle
   useEffect(() => {
     initLifeCycle()
@@ -29,13 +32,13 @@ export default function Parser(props: ParserProps) {
     requested && requested()
   }, [])
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     // setCount((state) => state + 1)
-  }
+  }, [count])
   return (
     <div>parser
       count: {data}
-      <Counter count={count}></Counter>
+      <Counter count={countMemo} onClick={handleClick}></Counter>
     </div>
   )
 }
@@ -54,10 +57,10 @@ const Counter = memo((props: CounterProps) => {
     console.log('Counter-----------update')
   })
   return (
-      <>
-        <p>{ counter.name }:{ counter.number }</p>
-        <button onClick={ ()=> setCounter({ ...counter, number:counter.number + 1 }) }>+</button>
-        {/* <button onClick={ onClick }>++</button> */}
-      </>
+    <>
+      <p>{ counter.name }:{ counter.number }</p>
+      <button onClick={ ()=> setCounter({ ...counter, number:counter.number + 1 }) }>+</button>
+      {/* <button onClick={ onClick }>++</button> */}
+    </>
   )
 })

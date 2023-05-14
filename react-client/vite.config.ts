@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import unocss from 'unocss/vite'
-import { presetUno } from 'unocss'
+import { presetUno, presetIcons } from 'unocss'
 import { resolve } from 'path'
 
 export default defineConfig({
@@ -14,7 +14,12 @@ export default defineConfig({
     react(),
     unocss({
       presets: [
-        presetUno()
+        presetUno(),
+        presetIcons({
+          collections: {
+            mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default)
+          }
+        })
       ]
     })
   ]

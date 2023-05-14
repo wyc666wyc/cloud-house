@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useInput } from '@/hooks/useInput'
 import './index.scss'
 
 interface DrawerProps { 
@@ -46,8 +47,14 @@ export default function () {
 
 function Drawer(props: DrawerProps) {
   const { onClick, className } = props
+  const name = useInput()
+  const password = useInput()
   return (
     <div className={className}>
+      <input type="text" {...name} />
+      <input type="text" {...password} />
+      <div>name{name.value}</div>
+      <div>password{password.value}</div>
       <button onClick={onClick}>close</button>
     </div>
   )

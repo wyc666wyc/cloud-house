@@ -7,8 +7,10 @@ importers:
       '@element-plus/icons-vue': ^2.1.0
       '@fastify/cors': ^8.2.1
       '@fastify/mongodb': ^7.0.0
+      '@iconify-json/mdi': ^1.1.51
       '@types/react': ^18.2.0
       '@types/react-dom': ^18.2.1
+      '@unocss/preset-icons': ^0.51.12
       '@unocss/preset-uno': ^0.50.6
       '@vitejs/plugin-react': ^4.0.0
       '@vitejs/plugin-vue': ^4.2.1
@@ -39,8 +41,10 @@ importers:
       '@element-plus/icons-vue': 2.1.0_vue@3.2.47
       '@fastify/cors': 8.2.1
       '@fastify/mongodb': 7.0.0
+      '@iconify-json/mdi': 1.1.51
       '@types/react': 18.2.6
       '@types/react-dom': 18.2.4
+      '@unocss/preset-icons': 0.51.12
       '@unocss/preset-uno': 0.50.6
       '@vitejs/plugin-react': 4.0.0_vite@4.3.5
       '@vitejs/plugin-vue': 4.2.1_vite@4.3.5+vue@3.2.47
@@ -762,6 +766,12 @@ packages:
       '@floating-ui/core': 1.2.5
     dev: false
 
+  /@iconify-json/mdi/1.1.51:
+    resolution: {integrity: sha512-fyf4N7GBaUw2A//v3vjsJ440qd69c+pN4PazOp6901ALM3QcKGAVWcISOhZ1J6jVF2zNsxrwMYHoOoP2UrAkCw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
@@ -990,6 +1000,10 @@ packages:
     resolution: {integrity: sha512-WMIp8xr7YSlID2whqfRGLwagp59e6u4ckPACEpoDOW8sTeSPRZm54hxPhuWXD1SQuqcwHPMtM9nzGD8UOnqQxA==}
     dev: false
 
+  /@unocss/core/0.51.12:
+    resolution: {integrity: sha512-H8mLy6ZKu9nGZe5jlHhLPIVwh2G3cCDSBGl5aIZJFI1qpmDC+Zb3iueBGigNpX75IzkjaGKZiK1WUWq8TShjtA==}
+    dev: false
+
   /@unocss/inspector/0.50.6:
     resolution: {integrity: sha512-6nX1YtaL67ohn/PfSSBv3npJ8qZcdc7S9X2zE6PUD/xhwtz7Bohx9I/KtmFdjJz5WeeGR7di0uYC6xsAcFLndQ==}
     dependencies:
@@ -1020,6 +1034,16 @@ packages:
     dependencies:
       '@iconify/utils': 2.1.5
       '@unocss/core': 0.50.6
+      ofetch: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@unocss/preset-icons/0.51.12:
+    resolution: {integrity: sha512-JdA3j9GhpwU6/VJMJjqZulYVdYAx2R86eXdlwZXVt7WYy/zWAF4au1iBI6+e5rp3V98yxFe+byWXqvn5aRUszg==}
+    dependencies:
+      '@iconify/utils': 2.1.5
+      '@unocss/core': 0.51.12
       ofetch: 1.0.1
     transitivePeerDependencies:
       - supports-color

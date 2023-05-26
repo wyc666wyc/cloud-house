@@ -10,6 +10,20 @@ const routes: RouteRecordRaw[] = [
     path: '/table',
     component: () => import('@/views/table')
   },
+  {
+    path: '/container',
+    component: () => import('@/views/Container'),
+    children: [
+      {
+        path: 'c1/:id',
+        component: () => import('@/views/Container/children/c1')
+      },
+      {
+        path: 'c2',
+        component: () => import('@/views/Container/children/c2')
+      },
+    ]
+  }
 ]
 
 const router = createRouter({

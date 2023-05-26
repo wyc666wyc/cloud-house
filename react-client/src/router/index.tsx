@@ -4,6 +4,7 @@ import Table from '@/views/Table'
 import Main from '@/views/Main'
 import Reducer from '@/views/Reducer'
 import Cesium from '@/views/Cesium'
+import Music from '@/views/Music'
 import NotFound from '@/views/Error/404'
 
 export default function Router() {
@@ -15,6 +16,10 @@ export default function Router() {
     {
       path: 'cesium',
       element: <Cesium />,
+    },
+    {
+      path: 'music',
+      element: <Music />,
     },
     {
       path: 'table/:id',

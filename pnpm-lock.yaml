@@ -25,6 +25,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.1
         version: 18.2.4
+      '@types/wavesurfer.js':
+        specifier: ^6.0.6
+        version: 6.0.6
       '@unocss/preset-icons':
         specifier: ^0.51.12
         version: 0.51.12
@@ -106,6 +109,9 @@ importers:
       vuedraggable:
         specifier: ^4.1.0
         version: 4.1.0(vue@3.2.47)
+      wavesurfer.js:
+        specifier: ^6.6.3
+        version: 6.6.3
       xlsx:
         specifier: ^0.18.5
         version: 0.18.5
@@ -1132,6 +1138,10 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: false
 
+  /@types/debounce@1.2.1:
+    resolution: {integrity: sha512-epMsEE85fi4lfmJUH/89/iV/LI+F5CvNIvmgs5g5jYFPfhO2S/ae8WSsLOKWdwtoaZw9Q2IhJ4tQ5tFCcS/4HA==}
+    dev: false
+
   /@types/estree@1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
 
@@ -1177,6 +1187,12 @@ packages:
 
   /@types/strip-json-comments@0.0.30:
     resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
+    dev: false
+
+  /@types/wavesurfer.js@6.0.6:
+    resolution: {integrity: sha512-fD54o0RXZXxkOb+69Rt6rGViaHpIc1Mmde2aOX9qPhlQhrCPepybGnsekiG407+7scPlaK+hmuPez5AnnmlzGg==}
+    dependencies:
+      '@types/debounce': 1.2.1
     dev: false
 
   /@types/web-bluetooth@0.0.16:
@@ -4140,6 +4156,10 @@ packages:
     dependencies:
       sortablejs: 1.14.0
       vue: 3.2.47
+    dev: false
+
+  /wavesurfer.js@6.6.3:
+    resolution: {integrity: sha512-XqUOXe8+SOTe8uKCHaqW0vJ5etCCQvq/NgaPycn9HAX/nUi+2zoWD+w9i7H5vBT9UCDNawOia+vS5Ct3kZGQzA==}
     dev: false
 
   /webidl-conversions@7.0.0:

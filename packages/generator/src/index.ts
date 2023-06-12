@@ -2,7 +2,7 @@ import {} from './config'
 import { inputConfig, selectConfig, layoutConfig, customConfig } from './formComponentConfig'
 import { transfer } from './componentsMapping/transfer'
 import elementPlus from './componentsMapping/element-plus'
-export const layouts = ['col', 'sub', 'block'] as const
+export const layouts = ['col', 'sub', 'container'] as const
 export const componentTypes = ['input', 'select', 'layout', 'custom'] as const
 
 export const inputFormComponent = transfer(inputConfig, elementPlus)

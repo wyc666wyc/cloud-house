@@ -72,9 +72,9 @@ const layouts = {
       </el-col>
     )
   },
-  block() {
+  container() {
     return (
-      <div>block</div>
+      <div>container</div>
     )
   }
 }

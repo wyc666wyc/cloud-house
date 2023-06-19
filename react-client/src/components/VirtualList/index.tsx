@@ -20,10 +20,11 @@ export default function (props: VProps) {
     height: itemHeight * count
   }
   const getCurrentChildren = () => {
+    console.log('onScroll')
     const startIndex = Math.floor(scrollOffset / itemHeight)
     const topBufferStartIndex = Math.max(0, startIndex - 2)
     const visibleCount = Math.ceil(height / itemHeight)
-    const bottomBufferEndIndex = Math.min(count - 1, startIndex + visibleCount + 2)
+    const bottomBufferEndIndex = Math.min(count, startIndex + visibleCount + 2)
     const children = []
     for (let i = topBufferStartIndex; i < bottomBufferEndIndex; i++) {
       const item = list[i]

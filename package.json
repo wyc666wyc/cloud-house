@@ -16,6 +16,8 @@
     "@iconify-json/mdi": "^1.1.51",
     "@iconify-json/tabler": "^1.1.75",
     "@types/wavesurfer.js": "^6.0.6",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "@unocss/preset-icons": "^0.51.12",
     "@unocss/preset-uno": "^0.50.6",
     "@vitejs/plugin-react": "^4.0.0",

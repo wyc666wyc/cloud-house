@@ -1,5 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef, forwardRef } from 'react'
 import { useAnimaton } from '@/hooks/useAnimation'
+import Uploader from '@/components/Uploader'
 import './index.scss'
 
 interface DrawerProps { 
@@ -27,6 +28,7 @@ export default function () {
   }
   return (
     <div>
+      <Uploader></Uploader>
       <button onClick={handleClick}>open</button>
       {
         show ? <DrawerR ref={domRef} className={ 'drawer ' + stage } onClick={handleClick}></DrawerR> : null

@@ -1,0 +1,24 @@
+{
+  "name": "@dynamic-form/echarts-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "vite": "^4.2.1",
+    "element-plus": "^2.3.1",
+    "@dynamic-form/generator": "workspace:^",
+    "@dynamic-form/render": "workspace:^",
+    "@dynamic-form/utils": "workspace:^",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "unplugin-auto-import": "^0.15.2",
+    "unplugin-vue-components": "^0.24.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

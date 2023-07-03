@@ -12,6 +12,7 @@
     "@dynamic-form/generator": "workspace:^",
     "@dynamic-form/render": "workspace:^",
     "@dynamic-form/utils": "workspace:^",
+    "@dynamic-form/common": "workspace:^",
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {

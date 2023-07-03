@@ -168,8 +168,13 @@ importers:
         specifier: ^0.24.1
         version: 0.24.1(vue@3.2.47)
 
+  packages/common: {}
+
   packages/echarts-editor:
     dependencies:
+      '@dynamic-form/common':
+        specifier: workspace:^
+        version: link:../common
       '@dynamic-form/generator':
         specifier: workspace:^
         version: link:../generator

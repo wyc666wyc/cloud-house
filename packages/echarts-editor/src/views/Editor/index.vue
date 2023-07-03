@@ -40,24 +40,4 @@ const handleOption = ({ action, data }) => {
       break
   }
 }
-onMounted(() => {
-  const option: EChartsOption = {
-    xAxis: {
-      type: "category",
-      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    },
-    yAxis: {
-      type: "value",
-    },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: "line",
-      },
-    ],
-  }
-  setTimeout(() => {
-    chartOption.value = option
-  })
-})
 </script>

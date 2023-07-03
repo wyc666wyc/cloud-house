@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+  "comment": {
+    "info": "remove @types/react ^18.2.0; @types/react-dom ^18.2.1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -16,8 +19,6 @@
     "@fastify/multipart": "^7.6.1",
     "@iconify-json/mdi": "^1.1.51",
     "@iconify-json/tabler": "^1.1.75",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.1",
     "@types/wavesurfer.js": "^6.0.6",
     "@unocss/preset-icons": "^0.51.12",
     "@unocss/preset-uno": "^0.50.6",

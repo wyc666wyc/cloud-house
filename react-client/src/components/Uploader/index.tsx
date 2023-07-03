@@ -4,7 +4,7 @@ import { createFileChunk, useRequest } from './hooks/useUpload.hook'
 
 
 export default function Uploader() {
-  const [chunkSize, setChunkSize] = useState(10 * 1024)
+  const [chunkSize, setChunkSize] = useState(10 * 1024 * 1024)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files!

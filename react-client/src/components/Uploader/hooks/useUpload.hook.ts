@@ -1,4 +1,4 @@
-const url = ``
+const url = `http://localhost:3000/upload`
 export const useRequest = async (chunk: Blob, hash: string, name: string) => {
   const formData = new FormData()
   formData.append('chunk', chunk)

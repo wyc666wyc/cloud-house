@@ -1,5 +1,6 @@
 import { defineComponent, toRefs } from 'vue'
 import { ElCollapse, ElCollapseItem } from 'element-plus'
+import OptionAttrs from '@/components/OptionAttrs'
 import type { PropType } from 'vue'
 import type { EChartsOption } from 'echarts'
 
@@ -28,15 +29,3 @@ export default defineComponent({
     )
   }
 })
-
-interface OptionAttrsProps {
-  type: string,
-  config: unknown
-}
-const OptionAttrs = (props: OptionAttrsProps) => (
-  <div>1</div>
-)
-
-const xAxisFragment = () => {
-
-}

@@ -1,0 +1,20 @@
+import { } from 'echarts'
+const textStyle = {
+  color: '#333',
+  fontStyle: 'normal',
+  fontWeight: 'bolder',
+  fontFamily: 'sans-serif',
+  fontSize: 18,
+  width: '',
+  height: '',
+  textBorderColor: null,
+  textBorderWidth: null,
+  textBorderType: 'solid',
+  textBorderDashOffset: 0,
+  textShadowColor: 'transparent',
+  textShadowBlur: 0,
+  textShadowOffsetX: 0,
+  textShadowOffsetY: 0,
+  overflow: 'none',
+  ellipsis: '...',
+}

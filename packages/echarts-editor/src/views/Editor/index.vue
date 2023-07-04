@@ -6,7 +6,7 @@
       <Canvas class="flex-1" :option="chartOption"></Canvas>
       <Configurator class="w-70" :option="chartOption"></Configurator>
     </div>
-    <ElDrawer v-model="monacoVisible" direction="ltr" withHeader={wi} size="50%" >
+    <ElDrawer v-model="monacoVisible" direction="ltr" :with-header=false size="50%" >
       <MonacoEditor ref="monacoRef"></MonacoEditor>
     </ElDrawer>
   </div>
@@ -24,7 +24,6 @@ import { MonacoEditor } from "@dynamic-form/common/src/components/MonacoEditor"
 const monacoVisible = ref(false)
 const monacoRef = ref(null)
 const chartOption = ref()
-const wi = false
 
 const handleOption = ({ action, data }) => {
   switch (action) {

@@ -1,8 +1,11 @@
 import './App.css'
+import Home from './views/home'
 
 function App() {
   return (
-    <div>1</div>
+    <div>
+      <Home />
+    </div>
   )
 }
 

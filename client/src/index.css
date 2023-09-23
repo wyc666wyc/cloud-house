@@ -6,4 +6,7 @@ html, body {
 }
 #root {
   height: 100%;
+  overflow-y: hidden;
+  text-align: center;
+  background-color: aquamarine;
 }

@@ -1,4 +1,6 @@
 import Controls from "./Control"
+import Sensor from "./Sensor"
+import type { Coordinate } from '../../types'
 export default class Car {
   x: number
   y: number
@@ -11,21 +13,24 @@ export default class Car {
   angle: number
   angleScale: number
   controls: Controls
+  sensor: Sensor
   constructor(x: number, y: number, w: number, h: number) {
     this.x = x
     this.y = y
     this.w = w
     this.h = h
     this.speed = 0
-    this.maxSpeed = 3
-    this.acceleration = 0.05
+    this.maxSpeed = 30
+    this.acceleration = 0.08
     this.friction = 0.02
     this.angle = 0
     this.angleScale = 0.03
     this.controls = new Controls()
+    this.sensor = new Sensor(this)
   }
-  update() {
+  update(roadBorders: Coordinate[][]) {
     this.#move()
+    this.sensor.update(roadBorders)
   }
   #move() {
     if (this.controls.forward) {
@@ -75,5 +80,6 @@ export default class Car {
     )
     ctx.fill()
     ctx.restore()
+    this.sensor.draw(ctx)
   }
 }

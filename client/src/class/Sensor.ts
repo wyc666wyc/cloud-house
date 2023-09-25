@@ -1,6 +1,6 @@
 import Car from "./Car"
-import { lerp } from '../utils'
-import { Coordinate } from '../../types'
+import { lerp, getIntersection } from '../utils'
+import { Coordinate, Reading } from '../../types'
 
 export default class Sensor {
   car: Car
@@ -8,13 +8,14 @@ export default class Sensor {
   rayLength: number
   raySpred: number
   rays: Coordinate[][]
-  readings: []
+  readings: (Reading | null | undefined) []
   constructor(car: Car, rayCount = 10) {
     this.car = car
     this.rayCount = rayCount
     this.rayLength = 100
     this.raySpred = Math.PI / 4
     this.rays = []
+    this.readings = []
   }
   update(roadBorders: Coordinate[][]) {
     this.#castRays()
@@ -26,7 +27,17 @@ export default class Sensor {
     })
   }
   #getReadings(ray: Coordinate[], roadBorders: Coordinate[][]) {
-
+    const touches: Reading [] = []
+    roadBorders.forEach(border => {
+      const touch = getIntersection(ray[0], ray[1], border[0], border[1])
+      touch && touches.push(touch)
+    })
+    if (touches.length === 0) {
+      return null
+    }
+    const offset = touches.map(e => e.offset)
+    const minOffset = Math.min(...offset)
+    return touches.find(e => e.offset === minOffset) 
   }
   #castRays() {
     this.rays.length = 0

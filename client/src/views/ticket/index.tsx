@@ -19,7 +19,7 @@ function initCanvas() {
   const raduis = 2
   const grid = size + margin
   const rows = 15
-  const cols = 200
+  const cols = 20
   const seats: Seat[] = []
   const selects: Set<number> = new Set()
   for(let row = 0; row < rows; row ++) {
@@ -29,10 +29,26 @@ function initCanvas() {
       seats.push(seat)
     }
   }
-  function setSeatStatus(e: MouseEvent) {
+  function getIndex(e: MouseEvent) {
     const x = Math.floor(e.clientX / grid)
     const y = Math.floor(e.clientY / grid)
     const index = x * cols + y
+    return index
+  }
+  function getIndex2(e: MouseEvent) {
+    const { clientX, clientY } = e
+    let index = null
+    for(let i = 0; i < seats.length; i++) {
+      const { x, y } = seats[i]
+      if (clientX < x + size && clientX > x && clientY < y + size && clientY > y) {
+        index = i
+      }
+    }
+    return index
+  }
+  function setSeatStatus(e: MouseEvent) {
+    const index = getIndex2(e)
+    if (!index && index !== 0 ) return
     if (selects.has(index)) {
       seats[index].changeColor(ctx, 'transparent')
       selects.delete(index)

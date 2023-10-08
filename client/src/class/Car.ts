@@ -20,7 +20,7 @@ export default class Car {
     this.w = w
     this.h = h
     this.speed = 0
-    this.maxSpeed = 30
+    this.maxSpeed = 10
     this.acceleration = 0.08
     this.friction = 0.02
     this.angle = 0

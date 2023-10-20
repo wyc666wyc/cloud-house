@@ -1,0 +1,17 @@
+{
+  "tesla": {
+    "maxSpeed": 20,
+    "acceleration": 0.1,
+    "friction": 0.02
+  },
+  "benz": {
+    "maxSpeed": 16,
+    "acceleration": 0.05,
+    "friction": 0.02
+  },
+  "base": {
+    "maxSpeed": 10,
+    "acceleration": 0.02,
+    "friction": 0.02
+  }
+}

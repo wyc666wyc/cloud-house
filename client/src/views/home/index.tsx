@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import Car from "../../class/Car"
 import Road from "../../class/Road"
+import CarJson from '../../config/car.json'
 
 export default function Home() {
   useEffect(() => {
@@ -11,11 +12,11 @@ export default function Home() {
 
 function initCanvas() {
   const cvs = document.getElementById("cvs")! as HTMLCanvasElement
-  cvs.width = 300
+  cvs.width = 600
   cvs.height = window.innerHeight
   const ctx = cvs.getContext("2d")!
-  const road = new Road(cvs.width / 2, cvs.width * 0.9)
-  const car = new Car(road.getRoadCenter(0), 100, 30, 50)
+  const road = new Road(cvs.width / 2, cvs.width * 0.9, 6)
+  const car = new Car(road.getRoadCenter(0), 100, 30, 50, CarJson.tesla)
   // const car2 = new Car(road.getRoadCenter(1), 100, 30, 50)
   animate()
   function animate() {
